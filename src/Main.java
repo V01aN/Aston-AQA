@@ -2,27 +2,54 @@ package src;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Task 1:");
         printThreeWords();
+
+        System.out.println("Task 2:");
         checkSumSign(5, -6);
+
+        System.out.println("Task 3:");
         printColor(101);
+
+        System.out.println("Task 4:");
         compareNumbers(3, 2);
+
+        System.out.println("Task 5:");
         fromTenToTwenty(19, 1);
+
+        System.out.println("Task 6:");
         positiveOrNegative(-1);
+
+        System.out.println("Task 7:");
         System.out.println(isPositive(-7));
+
+        System.out.println("Task 8:");
         printLines("i love Java and Aston!", 3);
+
+        System.out.println("Task 9:");
         System.out.println(isLeapYear(404));
+
+        System.out.println("Task 10:");
         int[] array = new int[] {0, 0, 0, 1, 0, 1, 0, 1, 1};
         int[] newArray = bitInversion(array);
         for (int number : newArray) System.out.print(number + " ");
         System.out.println();
+
+        System.out.println("Task 11:");
         array = createFullArray();
         for (int number : array) System.out.print(number + " ");
         System.out.println();
+
+        System.out.println("Task 12:");
         array = new int[] {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         newArray = arrayChanges(array);
         for (int number : newArray) System.out.print(number + " ");
         System.out.println();
+
+        System.out.println("Task 13:");
         matrixDiagonals();
+
+        System.out.println("Task 14:");
         newArray = arrayInit(12, 3);
         for (int number : newArray) System.out.print(number + " ");
     }
@@ -103,7 +130,6 @@ public class Main {
         for (int i = 0, j = matrix.length - 1; i < matrix.length; i++, j--) {
             matrix[i][j] = 1;
         }
-
         for(int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 System.out.print(matrix[i][j] + " ");

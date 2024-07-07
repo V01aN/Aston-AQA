@@ -81,7 +81,7 @@ public class Main {
     }
 
     public static boolean isPositive(int number) {
-        return number >= 0;
+        return number < 0;
     }
 
     //Реализация данного метода подразумевает то, что параметр

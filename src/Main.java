@@ -15,7 +15,7 @@ public class Main {
         compareNumbers(3, 2);
 
         System.out.println("Task 5:");
-        fromTenToTwenty(19, 1);
+        System.out.println(fromTenToTwenty(19, 1));
 
         System.out.println("Task 6:");
         positiveOrNegative(-1);
@@ -72,8 +72,8 @@ public class Main {
         System.out.println(a >= b ? "a >= b" : "a < b");
     }
 
-    public static void fromTenToTwenty(int num1, int num2) {
-        System.out.println(num1 + num2 >= 10 && num1 + num2 <= 20);
+    public static boolean fromTenToTwenty(int num1, int num2) {
+       return num1 + num2 >= 10 && num1 + num2 <= 20;
     }
 
     public static void positiveOrNegative(int number) {

@@ -1,16 +1,12 @@
 package by.lesson2;
 
 public class Park {
+    private Attraction[] attractions;
+    private int length;
     private class Attraction {
         private String name;
         private String workingTime;
         private double cost;
-
-        public Attraction() {
-            name = "unknown";
-            workingTime = "unknown";
-            cost = 0;
-        }
 
         public Attraction(String name, String workingTime, double cost) {
             this.name = name;
@@ -22,33 +18,22 @@ public class Park {
             return name;
         }
 
-        public void setName(String name) {
-            this.name = name;
-        }
-
         public String getWorkingTime() {
             return workingTime;
-        }
-
-        public void setWorkingTime(String workingTime) {
-            this.workingTime = workingTime;
         }
 
         public double getCost() {
             return cost;
         }
 
-        public void setCost(double cost) {
-            this.cost = cost;
+        @Override
+        public String toString() {
+            return "Name: " + getName() + "\nWorking time: " + getWorkingTime() + "\nCost: " + getCost();
         }
     }
 
-    public Attraction[] attractions;
-    int length;
-
-    public Park() {
-        attractions = new Attraction[5];
-        length = 0;
+    public Attraction[] getAttractions() {
+        return attractions;
     }
 
     public Park(int size) {
@@ -60,11 +45,5 @@ public class Park {
         Attraction attraction = new Attraction(name, workingTime, cost);
         attractions[length] = attraction;
         length++;
-    }
-
-    public void printAttractionInfo(int id) {
-        System.out.println("Name: " + attractions[id].getName());
-        System.out.println("Working time: " + attractions[id].getWorkingTime());
-        System.out.println("Cost: " + attractions[id].getCost());
     }
 }

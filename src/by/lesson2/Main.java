@@ -24,6 +24,6 @@ public class Main {
         park.addAttraction("Колесо обозрения", "15:00 - 22:00", 500);
         park.addAttraction("Молоток", "12:30 - 20:00", 200);
 
-        park.printAttractionInfo(2);
+        System.out.println(park.getAttractions()[2]);
     }
 }

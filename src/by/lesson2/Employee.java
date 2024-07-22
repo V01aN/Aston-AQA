@@ -18,11 +18,7 @@ public class Employee {
     }
 
     public void printInfo() {
-        System.out.println("Full name: " + fullName);
-        System.out.println("Post: " + post);
-        System.out.println("Age: " + age);
-        System.out.println("email: " + email);
-        System.out.println("Salary: $" + salary);
-        System.out.println("Phone number: " + phoneNumber);
+        System.out.println("Full name: " + fullName + "\nPost: " + post + "\nAge: " + age + "\nemail: " + email +
+                "\nSalary: $" + salary + "\nPhone number: " + phoneNumber);
     }
 }

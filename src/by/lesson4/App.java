@@ -2,11 +2,18 @@ package by.lesson4;
 
 public class App {
     public static void main(String[] args) {
-        String[][] incorrectSizeArr = new String[][]{
+        String[][] incorrectSizeArr1 = new String[][]{
                 {"1", "6", "8", "3"},
                 {"5", "8", "10", "7"},
                 {"1", "1", "3", "3", "3"},
                 {"6", "2", "5", "1"}
+        };
+        String[][] incorrectSizeArr2 = new String[][]{
+                {"1", "6", "8", "3"},
+                {"5", "8", "10", "7"},
+                {"1", "1", "3", "3"},
+                {"6", "2", "5", "1"},
+                {"2", "5", "0", "2"}
         };
         String[][] incorrectDataArr = new String[][] {
                 {"2", "6", "2", "3"},
@@ -14,23 +21,25 @@ public class App {
                 {"g", "6", "3", "5"},
                 {"6", "7", "5", "0"}
         };
+
         String[][] correctArr = new String[][] {
                 {"2", "3", "2", "3"},
                 {"5", "8", "1", "4"},
                 {"2", "6", "9", "5"},
                 {"6", "7", "5", "0"}
         };
-        exceptionChecker(incorrectSizeArr);
+        exceptionChecker(incorrectSizeArr1);
+        exceptionChecker(incorrectSizeArr2);
         exceptionChecker(incorrectDataArr);
         exceptionChecker(correctArr);
     }
 
     public static void stringToIntSum(String[][] arr) throws MyArraySizeException, MyArrayDataException {
-        if (arr.length > 4) {
+        if (arr.length != 4) {
             throw new MyArraySizeException("Incorrect array size");
         }
         for(int i = 0; i < 4; i++) {
-            if (arr[i].length > 4) {
+            if (arr[i].length != 4) {
                 throw new MyArraySizeException("Incorrect array size");
             }
         }
@@ -42,7 +51,7 @@ public class App {
                     result += Integer.parseInt(arr[i][j]);
                 }
                 catch (Exception ex) {
-                    throw new MyArraySizeException ("Incorrect data type at [" + i + "][" + j + "]");
+                    throw new MyArrayDataException ("Incorrect data type at [" + i + "][" + j + "]");
                 }
             }
         }

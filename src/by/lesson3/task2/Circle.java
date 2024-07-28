@@ -12,10 +12,6 @@ public class Circle extends Figure implements IShape {
         return radius;
     }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
     @Override
     public double calculatePerimeter() {
         return 2 * Math.PI * radius;
@@ -27,9 +23,7 @@ public class Circle extends Figure implements IShape {
     }
 
     @Override
-    public void printFigureInfo() {
-        System.out.println("Информация о круге:");
-        System.out.println("Радиус: " + radius);
-        super.printFigureInfo();
+    public String toString() {
+        return "Информация о круге:" + "\nРадиус: " + getRadius() + super.toString();
     }
 }

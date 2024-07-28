@@ -16,24 +16,12 @@ public class Triangle extends Figure implements IShape{
         return side1;
     }
 
-    public void setSide1(double side1) {
-        this.side1 = side1;
-    }
-
     public double getSide2() {
         return side2;
     }
 
-    public void setSide2(double side2) {
-        this.side2 = side2;
-    }
-
     public double getSide3() {
         return side3;
-    }
-
-    public void setSide3(double side3) {
-        this.side3 = side3;
     }
 
     @Override
@@ -48,11 +36,8 @@ public class Triangle extends Figure implements IShape{
     }
 
     @Override
-    public void printFigureInfo() {
-        System.out.println("Информация о треугольнике:");
-        System.out.println("Сторона 1: " + side1);
-        System.out.println("Сторона 2: " + side2);
-        System.out.println("Сторона 3: " + side3);
-        super.printFigureInfo();
+    public String toString() {
+        return "Информация о треугольнике:" + "\nСторона 1: " + getSide1() + "\nСторона 2: "
+                + getSide2() + "\nСторона 3: " + getSide3() + super.toString();
     }
 }

@@ -4,11 +4,6 @@ public class Cat extends Animal {
     private static int catsCounter = 0;
     private boolean full = false;
 
-    public Cat() {
-        super();
-        catsCounter++;
-    }
-
     public Cat(String name)  {
         super(name);
         catsCounter++;
@@ -20,17 +15,17 @@ public class Cat extends Animal {
     }
 
     @Override
-    public void setName(String name) {
-        super.setName(name);
+    public void run(int distance) {
+        if (distance > 200) {
+            System.out.println(getName() + " не может пробежать так далеко");
+            return;
+        }
+        System.out.println(getName() + " пробелажал " + distance + "м");
     }
 
     @Override
-    public void run(int distance) {
-        if (distance > 200) {
-            System.out.println(super.name + " не может пробежать так далеко");
-            return;
-        }
-        super.run(distance);
+    public void swim(int disctance) {
+        System.out.println(getName() + " не умеет плавать!");
     }
 
     public void printCatsNumber() {
@@ -48,12 +43,12 @@ public class Cat extends Animal {
 
     public void eat(Bowl bowl, int amountOfFood) {
         if (bowl.getAmountOfFood() > amountOfFood) {
-            System.out.println(name + " покушал из миски");
+            System.out.println(getName() + " покушал из миски");
             full = true;
             bowl.setAmountOfFood(bowl.getAmountOfFood() - amountOfFood);
         }
         else {
-            System.out.println(name + " недостаточно еды в миске");
+            System.out.println(getName() + " недостаточно еды в миске");
         }
     }
 }

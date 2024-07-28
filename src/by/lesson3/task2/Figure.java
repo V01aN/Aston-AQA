@@ -25,11 +25,9 @@ public abstract class Figure implements IShape {
         this.borderColor = borderColor;
     }
 
-    public void printFigureInfo() {
-        System.out.println("Периметр: " + calculatePerimeter());
-        System.out.println("Площадь: " + calculateArea());
-        System.out.println("Цвет заливки: " + fillColor);
-        System.out.println("Цвет сторон: " + borderColor);
-
+    @Override
+    public String toString() {
+        return "\nПериметр: " + calculatePerimeter() + "\nПлощадь: " + calculateArea() + "\nЦвет заливки: "
+                + getFillColor() + "\nЦвет сторон: " + getBorderColor();
     }
 }

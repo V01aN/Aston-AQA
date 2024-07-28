@@ -4,11 +4,6 @@ public abstract class Animal {
     protected String name;
     private static int animalsCounter = 0;
 
-    public Animal() {
-        name = "unknown";
-        animalsCounter++;
-    }
-
     public Animal(String name) {
         this.name = name;
         animalsCounter++;
@@ -18,27 +13,12 @@ public abstract class Animal {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public abstract void run(int distance);
 
-    public void run(int distance) {
-        if (distance <= 0) {
-            System.out.println("Некорректный ввод");
-            return;
-        }
-        System.out.println(name + " пробежал " + distance + "м");
-    }
-
-    public void swim (int distance) {
-        if (distance <= 0) {
-            System.out.println("Некорректный ввод");
-            return;
-        }
-        System.out.println(name + " проплыл " + distance + "м");
-    }
+    public abstract void swim (int distance);
 
     public static void printAnimalsNumber() {
         System.out.println("Количество животных: " + animalsCounter);
     }
 }
+

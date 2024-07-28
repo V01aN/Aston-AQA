@@ -37,10 +37,8 @@ public class Rectangle extends Figure implements IShape{
     }
 
     @Override
-    public void printFigureInfo() {
-        System.out.println("Информация о прямоугольнике:");
-        System.out.println("Первая пара сторон: " + sidesA);
-        System.out.println("Вторая пара сторон: " + sidesB);
-        super.printFigureInfo();
+    public String toString() {
+        return "Информация о прямоугольнике:" + "\nПервая пара сторон: " + getSidesA() + "\nВторая пара сторон: "
+                + getSidesB() + super.toString();
     }
 }

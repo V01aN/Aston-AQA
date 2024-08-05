@@ -11,7 +11,12 @@ public class PhoneBook {
     }
 
     public void add(String phoneNumber, String lastName) {
-        phoneBook.put(phoneNumber, lastName);
+        if(!phoneBook.containsKey(phoneNumber)) {
+            phoneBook.put(phoneNumber, lastName);
+        }
+        else {
+            System.out.println("This phone number already exists in this book!");
+        }
     }
 
     public String get(String lastName) {

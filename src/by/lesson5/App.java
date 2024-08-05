@@ -20,6 +20,8 @@ public class App {
         phoneBook.add("+375331113322", "Medvedev");
         phoneBook.add("+375331231212", "Fominko");
         phoneBook.add("+3753293451221", "Ivanov");
+        //Проерка на существующий номер телефона
+        phoneBook.add("+3753293451221", "Stukov");
 
         System.out.println(phoneBook.get("Medvedev"));
         System.out.println(phoneBook.get("Ivanov"));

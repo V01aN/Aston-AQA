@@ -32,7 +32,7 @@ public class MainTest {
     @Test
     public void paySectionImagesTest() {
         boolean visaImageIsDisplayed = mainPage.visaImageIsDisplayed();
-        Assert.assertEquals(true, visaImageIsDisplayed);
+        Assert.assertTrue(visaImageIsDisplayed);
     }
 
     @Test
@@ -47,8 +47,6 @@ public class MainTest {
 
     @Test
     public void continueReplenishmentButtonTest() {
-        String actualDepositSum;
-        String actualPhoneNumber;
         mainPage.inputPhoneNumber(ConfProperties.getProperty("phonenumber"));
         mainPage.inputDepositSum(ConfProperties.getProperty("depositsum"));
         mainPage.clickContinueBtn();

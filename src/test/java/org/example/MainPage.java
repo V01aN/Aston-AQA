@@ -66,9 +66,6 @@ public class MainPage {
     }
 
     public void clickClosePaymentWindowBtn() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-                "//div[contains(@class, 'header__close-button')]")));
         closePaymentWindowButton.click();
     }
 

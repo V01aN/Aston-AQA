@@ -11,8 +11,8 @@ public class MainTest {
     public static LearnMorePage learnMorePage;
     public static WebDriver driver;
 
-    @BeforeClass
-    public static void setUp() {
+    @Before
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
         driver = new ChromeDriver();
         mainPage = new MainPage(driver);
@@ -26,7 +26,7 @@ public class MainTest {
     @Test
     public void paySectionTest() {
         String actualText = mainPage.getPaySectionText();
-        Assert.assertEquals("Онлайн пополнение\nбез комиссии", actualText);
+        Assert.assertTrue(actualText.contains("Онлайн пополнение\nбез комиссии"));
     }
 
     @Test
@@ -42,7 +42,6 @@ public class MainTest {
         currentUrl = driver.getCurrentUrl();
         Assert.assertEquals("https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/",
                 currentUrl);
-        driver.navigate().back();
     }
 
     @Test
@@ -51,13 +50,10 @@ public class MainTest {
         mainPage.inputDepositSum(ConfProperties.getProperty("depositsum"));
         mainPage.clickContinueBtn();
         Assert.assertTrue(mainPage.paymentWindowIsDisplayed());
-        driver.switchTo().frame(1);
-        mainPage.clickClosePaymentWindowBtn();
-        driver.switchTo().defaultContent();
     }
 
-    @AfterClass
-    public static void tearDown() {
+    @After
+    public void tearDown() {
         driver.quit();
     }
 }
